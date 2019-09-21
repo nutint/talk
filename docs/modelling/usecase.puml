@@ -1,0 +1,20 @@
+@startuml
+left to right direction
+'skinparam packageStyle rectangle
+
+actor Member as member
+actor Controller as controller
+
+rectangle Engine {
+  (Manage Room) as (manageRoom)
+  (Connect to Engine) as (connectToEngine)
+  (Send and Receive Room Event) as (sendAndReceiveRoomEvent)
+  (Manage User Registry) as (manageUserRegistry)
+
+  controller -> (manageRoom)
+  controller -> (manageUserRegistry)
+  member -> (connectToEngine)
+  member -> (sendAndReceiveRoomEvent)
+}
+
+@enduml

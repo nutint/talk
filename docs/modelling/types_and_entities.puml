@@ -1,0 +1,13 @@
+@startuml
+
+class Room {
+  MemberInfo[] members
+}
+
+class MemberInfo {
+ String id
+ String name
+}
+
+
+@enduml

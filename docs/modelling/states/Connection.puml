@@ -1,0 +1,13 @@
+@startuml
+
+title Connection States
+
+state "Connected" as connected
+state "Verified" as verified
+
+[*] --> connected: Connect
+connected --> verified: Verified With Credentials
+connected --> [*]: Verified Failed
+connected --> [*]: Timed out
+
+@enduml

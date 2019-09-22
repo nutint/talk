@@ -5,7 +5,9 @@ import akka.http.scaladsl.testkit.{ScalatestRouteTest, WSProbe}
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
 import akka.stream.scaladsl._
+import akka.util.ByteString
 import org.scalatest.{Matchers, WordSpec}
+import scala.concurrent.duration._
 
 class WebsocketExSpec
   extends WordSpec
@@ -35,6 +37,18 @@ class WebsocketExSpec
     "response message when say greet" in {
       WS("/greeter", wsClient.flow) ~> websocketRoute ~> check {
         isWebSocketUpgrade shouldEqual true
+
+        wsClient sendMessage "Peter"
+        wsClient expectMessage "Hello Peter!"
+
+        wsClient sendMessage BinaryMessage(ByteString("abcdefg"))
+        wsClient expectNoMessage 100.millis
+
+        wsClient sendMessage "John"
+        wsClient expectMessage "Hello John!"
+
+        wsClient sendCompletion()
+        wsClient expectCompletion()
       }
     }
   }

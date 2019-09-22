@@ -1,7 +1,7 @@
-package com.nat.pokr.service
+package com.nat.okr.service
 
 import org.scalatest.{AsyncFreeSpec, Matchers}
-import org.scalatest.mockito.MockitoSugar
+import org.scalatestplus.mockito.MockitoSugar
 
 class ProjectServiceSpec
   extends AsyncFreeSpec

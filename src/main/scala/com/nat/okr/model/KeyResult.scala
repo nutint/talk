@@ -1,4 +1,4 @@
-package com.nat.pokr.model
+package com.nat.okr.model
 
 /**
   * Key Result has different measure approaches eg

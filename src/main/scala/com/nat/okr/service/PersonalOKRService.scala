@@ -1,4 +1,4 @@
-package com.nat.pokr.service
+package com.nat.okr.service
 
 class PersonalOKRService {
 

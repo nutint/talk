@@ -1,4 +1,4 @@
-package com.nat.pokr.model
+package com.nat.okr.model
 
 case class OKR[A<:Measurable[A]](
   objective: Objective,

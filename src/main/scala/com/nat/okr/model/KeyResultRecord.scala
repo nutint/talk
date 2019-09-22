@@ -1,4 +1,4 @@
-package com.nat.pokr.model
+package com.nat.okr.model
 
 import java.util.Date
 

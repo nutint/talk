@@ -1,3 +1,3 @@
 package com.nat.pokr.model
 
-case class Project(vision: Vision, checkpoint: Checkpoint)
+case class Project[A<:Measurable[A]](vision: Vision, checkpoint: Checkpoint[A])

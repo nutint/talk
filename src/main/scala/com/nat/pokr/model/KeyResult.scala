@@ -5,15 +5,15 @@ package com.nat.pokr.model
   *  - Accumulation
   *  - Final Capability
   */
-trait KeyResult
+trait KeyResult[A]
 case class AccumulationKeyResult[A](
   name: String,
   target: A,
   records: KeyResultRecord[A]
-) extends KeyResult
+) extends KeyResult[A]
 
 case class FinalCapabilityKeyResult[A](
   name: String,
   target: A,
   records: KeyResultRecord[A]
-) extends KeyResult
+) extends KeyResult[A]

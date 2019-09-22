@@ -1,7 +1,7 @@
 package com.nat.pokr.model
 
-case class Checkpoint(
+case class Checkpoint[A<:Measurable[A]](
   name: String,
   period: Period,
-  okrs: List[OKR]
+  okrs: List[OKR[A]]
 )
